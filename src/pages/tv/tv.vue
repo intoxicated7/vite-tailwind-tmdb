@@ -1,15 +1,5 @@
 <template>
-  <div class="bg-zinc-800">
-    <div class="container mx-auto px-4 py-2 flex">
-      <span
-        @click="$router.go(-1)"
-        class="text-gray-300 font-semibold cursor-pointer"
-      >
-        <i class="fas fa-arrow-left"></i>
-        Назад на главную
-      </span>
-    </div>
-  </div>
+  <ButtonBack />
   <div class="bg-cover" :style="{'background-image': `url('https://image.tmdb.org/t/p/original/${item.backdrop_path}')`}">
     <div class="container mx-auto px-4 py-16 flex">
       <img
@@ -53,51 +43,21 @@
       </div>
     </div>
   </div>
-  <!-- people -->
-  <!-- <div class="container mx-auto px-4 py-10">
-    <h2 class="text-xl font-semibold">В главных ролях</h2>
-    <div
-      v-if="people.cast"
-      class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-5"
-    >
-      <div class="mt-3" v-for="cast in people.cast.slice(0, 8)" :key="cast">
-        <div>
-          <img
-            class="rounded-md"
-            :src="'https://image.tmdb.org/t/p/original/' + cast.profile_path"
-          />
-        </div>
-        <div>
-          <h2 class="font-semibold">{{ cast.name }}</h2>
-          <span>{{ cast.character }}</span>
-        </div>
-      </div>
-    </div>
-    <span class="border-b-4 border-gray-900"></span>
-    <router-link
-      v-if="item.id"
-      :to="{ name: 'movie-cast', params: { itemId: item.id } }"
-    >
-      <h2 class="text-lg mt-5 font-semibold">
-        Показать полный актёрский и съёмочный состав
-      </h2>
-    </router-link>
-  </div> -->
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import ButtonBack from '@/components/ButtonBack.vue'
 
 export default {
+  components: { ButtonBack },
   computed: {
     ...mapGetters({
       item: 'tv',
-      // people: 'moviePeople'
     })
   },
   mounted () {
     this.$store.dispatch('getTv', [this.$route.params.itemId])
-    // this.$store.dispatch('getMoviePeople', [this.$route.params.itemId])
   }
 }
 </script>

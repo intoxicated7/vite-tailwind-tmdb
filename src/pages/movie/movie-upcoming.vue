@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto px-4 pt-16">
-    <h2 class="text-lg text-white font-semibold">Ожидаемые фильмы</h2>
+    <h2 class="text-lg dark:text-white font-semibold">Ожидаемые фильмы</h2>
 
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8"
@@ -14,7 +14,7 @@
             />
           </div>
           <div class="flex justify-between items-center mt-2">
-            <div class="text-white">{{ item.title }}</div>
+            <div class="dark:text-white">{{ item.title }}</div>
             <div>
               <div
                 v-if="item.vote_average >= 7"

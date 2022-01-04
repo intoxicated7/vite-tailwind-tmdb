@@ -1,13 +1,7 @@
 <template>
-  <div class="bg-zinc-800">
-    <div class="container mx-auto px-4 py-2 flex">
-      <span @click="$router.go(-1)" class="text-gray-300 font-semibold cursor-pointer">
-        <i class="fas fa-arrow-left"></i>
-        Назад на главную
-      </span>
-    </div>
-  </div>
-  <div class="bg-cover" :style="{'background-image': `url('https://image.tmdb.org/t/p/original/${item.backdrop_path}')`}">
+  <ButtonBack />
+  <!-- <div class="bg-cover" :style="{'background-image': `url('https://image.tmdb.org/t/p/original/${item.backdrop_path}')`}"> -->
+  <div class="bg-zinc-600">
     <div class="container mx-auto px-4 py-16 flex">
       <img class="w-80" :src="'https://image.tmdb.org/t/p/original/' + item.poster_path">
       <div class="ml-24">
@@ -73,8 +67,10 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import ButtonBack from '@/components/ButtonBack.vue'
 
 export default {
+  components: { ButtonBack },
   computed: {
     ...mapGetters({
       item: 'movie',
