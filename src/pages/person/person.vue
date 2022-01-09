@@ -19,8 +19,8 @@
       <div class="mt-10">
         <h2 class="text-lg text-white font-medium">Известность за</h2>
         <div class="flex">
-          <div v-for="cast in credits.cast" :key="cast">
-            <img class=" rounded-md" :src="'https://image.tmdb.org/t/p/original/' + cast.poster_path">
+          <div class="" v-for="cast in credits.cast" :key="cast">
+            <img class="rounded-md" :src="'https://image.tmdb.org/t/p/original/' + cast.poster_path">
             <div>
               <h2 class="text-center text-white text-sm">{{ cast.title }}</h2>
             </div>

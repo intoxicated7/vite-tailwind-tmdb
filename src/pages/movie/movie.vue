@@ -1,7 +1,7 @@
 <template>
   <ButtonBack />
   <!-- <div class="bg-cover" :style="{'background-image': `url('https://image.tmdb.org/t/p/original/${item.backdrop_path}')`}"> -->
-  <div class="bg-zinc-600">
+  <div class="bg-zinc-700">
     <div class="container mx-auto px-4 py-16 flex">
       <img class="w-80" :src="'https://image.tmdb.org/t/p/original/' + item.poster_path">
       <div class="ml-24">
