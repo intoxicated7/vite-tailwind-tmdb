@@ -14,14 +14,17 @@
           </div>
           <!-- primary nav -->
           <div class="hidden md:flex items-center space-x-1">
-            <router-link class="py-5 px-3 text-gray-50" to="/tv">Сериалы</router-link>
-            <router-link class="py-5 px-3 text-gray-50" to="/movie">Фильмы</router-link>
-            <router-link class="py-5 px-3 text-gray-50" to="/person">Актеры</router-link>
+            <router-link class="py-5 px-3 text-white" to="/tv">Сериалы</router-link>
+            <router-link class="py-5 px-3 text-white" to="/movie">Фильмы</router-link>
+            <router-link class="py-5 px-3 text-white" to="/person">Актеры</router-link>
           </div>
         </div>
         <!-- secondary nav -->
         <div class="hidden md:flex items-center space-x-1">
-          <router-link class="py-5 px-3 text-gray-50" to="/login">Авторизация</router-link>
+          <div v-if="user" class="text-white">
+            {{ user.email }}
+          </div>
+          <router-link v-else class="py-5 px-3 text-gray-50" to="/login">Авторизация</router-link>
         </div>
 
         <div class="md:hidden flex items-center">
@@ -49,6 +52,11 @@ export default {
   data() {
     return {
       menu: true
+    }
+  },
+  computed: {
+    user() {
+      return this.$store.getters.user
     }
   }
 }

@@ -11,6 +11,11 @@ const routes = [
     name: 'login',
     component: () => import('../pages/auth/login.vue')
   },
+    {
+    path: '/signup',
+    name: 'signup',
+    component: () => import('../pages/auth/signup.vue')
+  },
   {
     path: '/movie',
     name: 'movie',
